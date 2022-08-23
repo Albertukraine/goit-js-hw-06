@@ -13,10 +13,11 @@ console.log(createButtonEl);
 console.log(destroyButtonEl);
 console.log(boxesEl);
 
+let size = 30;
 createButtonEl.addEventListener("click", () => {
   let currentValue = valueEl.value;
   console.log("текущее значение", +currentValue);
-  let size = 30;
+  
   let count = +currentValue;
   for (let i = 0; i < count; i += 1) {
     const boxJS = document.createElement("div");
@@ -26,9 +27,10 @@ createButtonEl.addEventListener("click", () => {
     boxJS.style.height = `${size}px`;
     boxJS.style.backgroundColor = getRandomHexColor();
     boxesEl.append(boxJS);
+    
   }
 });
 
 destroyButtonEl.addEventListener("click", () => {
-  boxesEl.remove("div");
+  boxesEl.remove(boxesEl);
 });
