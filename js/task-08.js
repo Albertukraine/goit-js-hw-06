@@ -10,7 +10,7 @@ formEl.addEventListener("submit", (event) => {
   console.log(email.value, password.value);
   console.log(email.value.length, password.value.length);
 
-  if (email.value.length === 0 && password.value.length === 0) {
+  if (email.value.length === 0 || password.value.length === 0) {
     alert("Хазяїне, введіть щось в ті поля!");
   }
   if (email.value.length !== 0 && password.value.length !== 0) {

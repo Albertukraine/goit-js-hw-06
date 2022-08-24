@@ -12,20 +12,36 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
+
+// 1) пройти по масиву обьектів отримати значення ключів об'єктів масиву
+// 2) створити шаблонний рядок який кожну ітреацію впише в потік хтмл
+// 3) внести значення ключів в шаблонний рядок
+
 const listEl = document.querySelector(".gallery");
-const liArray = [];
-const imagesList = images.map((option) => {
-  const imageListItem = document.createElement("li");
-  const imageItem = document.createElement("img");
-  imageItem.classList.add("gallery-item");
-  imageItem.alt = option.alt;
-  imageItem.src = option.url;
-  imageListItem.append(imageItem);
-  liArray.push(imageListItem.outerHTML);
-  console.log(liArray);
-});
+console.log(listEl);
+
+for (const item of images) {
+  listEl.insertAdjacentHTML(
+    "afterbegin",
+    `<li> 
+  <img class = "gallery-item" src = ${item.url} alt = ${item.alt}></li>`
+  );
+}
+
+// const listEl = document.querySelector(".gallery");
+// const liArray = [];
+// const imagesList = images.map((option) => {
+//   const imageListItem = document.createElement("li");
+//   const imageItem = document.createElement("img");
+//   imageItem.classList.add("gallery-item");
+//   imageItem.alt = option.alt;
+//   imageItem.src = option.url;
+//   imageListItem.append(imageItem);
+//   liArray.push(imageListItem.outerHTML);
+//   console.log(liArray);
+// });
 
 // const gallery = document.querySelector('.gallery');
 // gallery.append(...imagesList);
 
-listEl.insertAdjacentHTML("afterbegin", liArray.join(""));
+// listEl.insertAdjacentHTML("afterbegin", liArray.join(""));

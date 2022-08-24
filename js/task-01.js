@@ -1,13 +1,11 @@
 const catEl = document.querySelectorAll(".item");
 
-const nameEl = document.querySelectorAll(".item > h2");
+// довжина масиву
+const catNumber = catEl.length;
 
-const numberOfItemsEl = document.querySelectorAll(".item ul");
-
-console.log(`Number of categories: ${catEl.length}`);
-console.log(`Category: ${nameEl[0].textContent}`);
-console.log(`Elements: ${numberOfItemsEl[0].childElementCount}`);
-console.log(`Category: ${nameEl[1].textContent}`);
-console.log(`Elements: ${numberOfItemsEl[1].childElementCount}`);
-console.log(`Category: ${nameEl[2].textContent}`);
-console.log(`Elements: ${numberOfItemsEl[2].childElementCount}`);
+console.log(`Number of categories: ${catNumber}`);
+// для кожного елементу масиву консолимо контент та довжину внутрішнього масиву
+const catContent = catEl.forEach((category) => {
+  console.log(`Category: ${category.firstElementChild.textContent}`);
+  console.log(`Elements: ${category.querySelectorAll("li").length}`);
+});
