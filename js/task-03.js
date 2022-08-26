@@ -18,15 +18,18 @@ const images = [
 // 3) внести значення ключів в шаблонний рядок
 
 const listEl = document.querySelector(".gallery");
-console.log(listEl);
 
-for (const item of images) {
-  listEl.insertAdjacentHTML(
-    "afterbegin",
-    `<li> 
-  <img class = "gallery-item" src = ${item.url} alt = ${item.alt}></li>`
-  );
-}
+const liArray = images.map( image => { return `<li> 
+<img class = "gallery-item" alt = "${image.alt}" src = "${image.url}"></li>` })
+
+listEl.insertAdjacentHTML("afterbegin", liArray.join(""));
+
+
+// const liArray = [];
+// for (const item of images) {
+//    liArray.push(`<li> 
+//   <img class = "gallery-item" alt = "${item.alt}" src = "${item.url}"></li>`);
+//  }
 
 // const listEl = document.querySelector(".gallery");
 // const liArray = [];

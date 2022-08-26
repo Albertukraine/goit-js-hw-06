@@ -6,6 +6,7 @@ const valueEl = document.querySelector("input");
 const createButtonEl = document.querySelector("[data-create]");
 const destroyButtonEl = document.querySelector("[data-destroy]");
 const boxesEl = document.getElementById("boxes");
+const controlsEl = document.getElementById("controls");
 
 console.log(valueEl);
 
@@ -33,4 +34,7 @@ createButtonEl.addEventListener("click", () => {
 
 destroyButtonEl.addEventListener("click", () => {
   boxesEl.remove(boxesEl);
+  controlsEl.insertAdjacentHTML("afterend", `<div id="boxes"></div>` );
+  
+  
 });
